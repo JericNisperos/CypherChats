@@ -1,13 +1,12 @@
 import React from 'react'
-import { auth, storage, db, googleProvider } from '../config/Firebase';
-import { createUserWithEmailAndPassword, signInWithPopup, signOut, signInWithEmailAndPassword, onAuthStateChanged } from 'firebase/auth';
+import { auth, db } from '../config/Firebase';
+import { createUserWithEmailAndPassword} from 'firebase/auth';
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from 'react-router-dom';
 
 function AuthenticateRegister() {
     const navigate = useNavigate();
     async function SignUp(e) {
-        // const navigate = useNavigate();
         e.preventDefault();
         const email = e.target[1].value;
         const password = e.target[2].value;
@@ -22,7 +21,7 @@ function AuthenticateRegister() {
             console.log(auth.currentUser.email)
             navigate("/");
         } catch (err) {
-            if(err = "auth/email-already-in-use")
+            if(err === "auth/email-already-in-use")
             alert("The email address is already in use.");
             else
             console.error(err);
@@ -35,7 +34,6 @@ function AuthenticateRegister() {
     <form className='LoginWrapper p-4 rounded' onSubmit={SignUp}>
                             <h2 className='text-center mt-5 mb-5'>Register an Account</h2>
                             <div className='form-group was-validated'>
-                                {/* <p className='form-label'>Email Address:</p> */}
                                 <input
                                     className='form-control no-border ml-1'
                                     placeholder="Display Name" />
@@ -44,7 +42,6 @@ function AuthenticateRegister() {
                                 </div>
                             </div>
                             <div className='mt-3 form-group was-validated'>
-                                {/* <p className='form-label'>Email Address:</p> */}
                                 <input
                                     className='form-control no-border ml-1'
                                     type="email"
@@ -54,7 +51,6 @@ function AuthenticateRegister() {
                                 </div>
                             </div>
                             <div className='mt-3 form-group was-validated'>
-                                {/* <p className='form-label'>Password</p> */}
                                 <input
                                     type="password"
                                     className='form-control no-border ml-1'
@@ -67,7 +63,6 @@ function AuthenticateRegister() {
                             </div>
 
                             <div className='mt-3 form-group was-validated'>
-                                {/* <p className='form-label'>Password</p> */}
                                 <input
                                     type="password"
                                     className='form-control no-border ml-1'
@@ -82,8 +77,6 @@ function AuthenticateRegister() {
                             <div className='text-center mt-3'>
                                 <p className='info'>By registering your account, you agreed to the <a href="#/" className="register-button">Terms and Conditions</a>.</p>
                                 <button className="btn btn-info" type="submit">Register Account</button>
-
-                                {/* <p>Already have an account?<a href="#/" className="register-button"> Login here</a>.</p> */}
                             </div>
                         </form>
   )

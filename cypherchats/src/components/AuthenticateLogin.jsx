@@ -15,7 +15,7 @@ function AuthenticateLogin() {
             console.log(auth.currentUser)
             navigate("/");
         } catch (err) {
-            if(err == "auth/wrong-password");
+            if(err === "auth/wrong-password");
             alert("Incorrect Password.");
             console.error(err);
         }
@@ -45,7 +45,7 @@ function AuthenticateLogin() {
             </div>
 
             <div className='text-center mt-3'>
-                <p className='info'>By logging in, you agreed to the <a href="#/" className="register-button">Terms and Conditions</a>.</p>
+                <p className='info'>By logging in, you agreed to the <a href="#/" className="register-button" >Terms and Conditions</a>.</p>
                 <button className="btn btn-info" type="submit">Login Account</button>
             </div>
         </form>

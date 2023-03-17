@@ -31,6 +31,9 @@
 
  }
 
+ .App {
+  height: 100vh;
+ }
  .hidden {
   display: none;
  }
@@ -39,25 +42,14 @@
   background-image: none !important;
  }
 
-.App {
-  background-color:   #EAE7DC;
-  height: 100vh;
-  // color: #C5C6C7;
-}
 
-.btn-custom-1 {
-  color: #C5C6C7 !important;
-}
-
-.container-box {
-  background-color: #1F2833;
-  border: #66FCF1;
-  border-radius: 15px;
-  border-width: 10;
-}
 .title-heading {
   font-family: 'VALORANT';
   color: #1F2833;
+}
+
+.chatbar {
+  width: 100%;
 }
 
 
@@ -65,11 +57,10 @@
   // background-color: #8E8D8A;
 
   .form-control {
-    // border-color: none !important;
     border: 0 !important;
     border-bottom: 1px solid black !important;
     color: black;
-    // background-color: #a9ece8 !important;
+
     &::placeholder {
       color: #E98074;
     }
