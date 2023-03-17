@@ -21,9 +21,6 @@ function AuthenticatePage() {
 
         }
 
-
-        
-
     }
 
     function ChangePage() {
