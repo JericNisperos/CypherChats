@@ -22,6 +22,9 @@ function AuthenticateRegister() {
             console.log(auth.currentUser.email)
             navigate("/");
         } catch (err) {
+            if(err = "auth/email-already-in-use")
+            alert("The email address is already in use.");
+            else
             console.error(err);
         }
         
@@ -35,7 +38,6 @@ function AuthenticateRegister() {
                                 {/* <p className='form-label'>Email Address:</p> */}
                                 <input
                                     className='form-control no-border ml-1'
-                                    required
                                     placeholder="Display Name" />
                                 <div className='invalid-feedback text-center'>
                                     Please enter your desired name
@@ -46,7 +48,6 @@ function AuthenticateRegister() {
                                 <input
                                     className='form-control no-border ml-1'
                                     type="email"
-                                    required
                                     placeholder="Email Address" />
                                 <div className='invalid-feedback text-center'>
                                     Please enter a valid Email Address
@@ -57,7 +58,6 @@ function AuthenticateRegister() {
                                 <input
                                     type="password"
                                     className='form-control no-border ml-1'
-                                    required
                                     minLength="6"
                                     id="password"
                                     placeholder="Password" />
@@ -71,7 +71,6 @@ function AuthenticateRegister() {
                                 <input
                                     type="password"
                                     className='form-control no-border ml-1'
-                                    required
                                     minLength="6"
                                     id="password2"
                                     placeholder="Repeat Password" />

@@ -1,6 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React from 'react'
 import { auth } from '../config/Firebase';
+import Navbar from './Navbar';
 
 function Home() {
 
@@ -15,7 +16,8 @@ function Home() {
   return (
     <div>Home
       {/* <h1>HOME IS HERE</h1> */}
-      <button onClick={Logout}>Log Out</button>
+      <Navbar />
+      <button className='btn btn-success'  onClick={Logout}>Log Out</button>
     </div>
     
   )

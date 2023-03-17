@@ -15,6 +15,8 @@ function AuthenticateLogin() {
             console.log(auth.currentUser)
             navigate("/");
         } catch (err) {
+            if(err == "auth/wrong-password");
+            alert("Incorrect Password.");
             console.error(err);
         }
     };
@@ -26,7 +28,6 @@ function AuthenticateLogin() {
                 <input
                     className='form-control no-border ml-1'
                     type="email"
-                    required
                     placeholder="Email Address" />
                 <div className='invalid-feedback text-center'>
                     Please enter a valid Email Address
@@ -36,7 +37,6 @@ function AuthenticateLogin() {
                 <input
                     type="password"
                     className='form-control no-border ml-1'
-                    required
                     minLength="6"
                     placeholder="Password" />
                 <div className='invalid-feedback text-center'>
