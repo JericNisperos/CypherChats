@@ -1,0 +1,90 @@
+
+/* 
+#B08401
+#D49E8D
+#DED1BD
+#FAF6F2
+#683B2B 
+*/
+
+/* 
+#0B0C10
+#1F2833
+#C5C6C7
+#66FCF1
+#45A29E
+ */
+/* 
+#EAE7DC
+#D8C3A5
+#8E8D8A
+#E98074
+#E85A4F
+ */
+
+ .colors {
+  color: #EAE7DC;
+  color: #D8C3A5;
+  color: #8E8D8A;
+  color: #E98074;
+  color: #E85A4F;
+
+ }
+
+ .hidden {
+  display: none;
+ }
+
+
+.App {
+  background-color:   #EAE7DC;
+  height: 100vh;
+  // color: #C5C6C7;
+}
+
+.btn-custom-1 {
+  color: #C5C6C7 !important;
+}
+
+.container-box {
+  background-color: #1F2833;
+  border: #66FCF1;
+  border-radius: 15px;
+  border-width: 10;
+}
+.title-heading {
+  font-family: 'VALORANT';
+  color: #1F2833;
+}
+
+
+.LoginWrapper {
+  // background-color: #8E8D8A;
+
+  .form-control {
+    // border-color: none !important;
+    border: 0 !important;
+    border-bottom: 1px solid black !important;
+    color: black;
+    // background-color: #a9ece8 !important;
+    &::placeholder {
+      color: #E98074;
+    }
+  }
+
+  a {
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  
+
+  .invalid-feedback {
+    color: red;
+  }
+}
