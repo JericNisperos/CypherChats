@@ -33,9 +33,15 @@
 
  .App {
   height: 100vh;
+  background-color: #EAE7DC;
  }
  .hidden {
   display: none;
+ }
+
+ .p-0 {
+  padding: 0 !important;
+  margin: 0 !important;
  }
 
  .was-validated .form-control:valid, .form-control.is-valid {
@@ -52,7 +58,26 @@
   width: 100%;
 }
 
+.parent {
+  min-height: 500px;
+  min-width: 800px;
+}
 
+.NavbarWrapper {
+  
+  background-color: #E98074;
+  .LogoutButton {
+    background-color: #E98074;
+    border: 0;
+  }
+}
+.ChatbarWrapper {
+  // min-width: 800px;
+}
+.HomeWrapper {
+    min-height: 100vh;
+    // min-width: 100%;
+}
 .LoginWrapper {
   // background-color: #8E8D8A;
 
@@ -60,7 +85,7 @@
     border: 0 !important;
     border-bottom: 1px solid black !important;
     color: black;
-
+    background-color: #EAE7DC;
     &::placeholder {
       color: #E98074;
     }
@@ -82,6 +107,19 @@
     color: red;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* body {

@@ -28,26 +28,26 @@ function App() {
 
   return (
     <div className="App">
-    <BrowserRouter>
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <ProtectedRoute>
-              <Home />
-            </ProtectedRoute>
-          }
-        ></Route>
-        <Route
-          path="/login"
-          element={
-            <AlreadyLoggedIn>
-              <AuthenticatePage />
-            </AlreadyLoggedIn>
-          }
-        ></Route>
-      </Routes>
-    </BrowserRouter>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <ProtectedRoute>
+                <Home />
+              </ProtectedRoute>
+            }
+          ></Route>
+          <Route
+            path="/login"
+            element={
+              <AlreadyLoggedIn>
+                <AuthenticatePage />
+              </AlreadyLoggedIn>
+            }
+          ></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

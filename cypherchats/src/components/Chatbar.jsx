@@ -2,7 +2,7 @@ import React from 'react'
 
 function Chatbar() {
   return (
-    <div>
+    <div className='ChatbarWrapper'>
         Test
 
     </div>
