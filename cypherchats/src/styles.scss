@@ -34,6 +34,7 @@
  .App {
   height: 100vh;
   background-color: #EAE7DC;
+  font-family: Proxima Nova, sans-serif;
  }
  .hidden {
   display: none;
@@ -63,16 +64,55 @@
   min-width: 800px;
 }
 
+.SidebarWrapper {
+  .SidebarContent {
+    background-color: #eba69e;
+
+    .searchIcon:hover {
+      background-color: #E98074;
+      border-radius:  0 !important;
+    }
+  }
+  
+
+  .form-control {
+      border: 0 !important;
+      border-radius: 0;
+      background-color: #EAE7DC;
+      &::placeholder {
+        color: #E98074;
+      }
+
+      &:focus {
+        border-color: #ced4da !important;
+        box-shadow: none !important;
+        outline: 0 !important;
+      }
+  }
+
+}
 .NavbarWrapper {
   
   background-color: #E98074;
+  border-top-left-radius: 10px;
   .LogoutButton {
     background-color: #E98074;
     border: 0;
   }
+
+  .displayName {
+    font-weight: bold;
+  }
 }
 .ChatbarWrapper {
   // min-width: 800px;
+  border-radius: 0;
+  
+
+  .ChatbarNavbar {
+    min-height: 48px;
+    background-color: #E85A4F;
+  }
 }
 .HomeWrapper {
     min-height: 100vh;

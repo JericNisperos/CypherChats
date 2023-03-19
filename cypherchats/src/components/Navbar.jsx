@@ -5,7 +5,7 @@ import { doc, getDoc } from "firebase/firestore";
 
 export default function Navbar() {
   return (
-    <div className="NavbarWrapper d-flex align-items-center rounded">
+    <div className="NavbarWrapper d-flex align-items-center">
       <div className="col-md-9 d-flex justify-content-start align-items-center">
         <img
           src="/favicon.ico"
@@ -14,7 +14,7 @@ export default function Navbar() {
           alt="logo"
           className="object-fit-none rounded mx-1"
         ></img>
-        <p className="text-center mt-0 mb-0 px-2">Amari</p>
+        <p className="displayName text-center mt-0 mb-0 px-2">Amari</p>
       </div>
       <div className="col-md-3 d-flex justify-content-end align-right">
         <a
