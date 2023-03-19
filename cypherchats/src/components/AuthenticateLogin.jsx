@@ -22,6 +22,7 @@ function AuthenticateLogin() {
     };
 
     return (
+
         <form className='LoginWrapper p-4 rounded' onSubmit={Login}>
             <h2 className='text-center mt-5 mb-5'>Login your Account</h2>
             <div className='form-group was-validated'>

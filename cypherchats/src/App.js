@@ -20,7 +20,11 @@ function App() {
     return children;
   };
 
-  const AlreadyLoggedIn = ({ children }) => {
+//  const AlreadyLoggedIn =  ({ children }) => {
+    
+//   };
+
+function AlreadyLoggedIn ({children}) {
     if (currentUser) return <Navigate to="/" />;
 
     return children;

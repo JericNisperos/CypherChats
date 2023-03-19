@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import AuthenticateLogin from './AuthenticateLogin';
 import AuthenticateRegister from './AuthenticateRegister';
+import {motion} from 'framer-motion';
 
 
 
@@ -14,6 +15,15 @@ function AuthenticatePage() {
     }
 
     return (
+        <motion.div
+        initial={{ y: 100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{
+            type: "spring",
+            stiffness: 260,
+            damping: 20,
+        duration: 3}}
+    >
         <div>
             <div className="container d-flex justify-content-center align-items-center pt-5 h-100 d-inline-block">
                 <div className="row">
@@ -26,6 +36,7 @@ function AuthenticatePage() {
                 </div>
             </div>
         </div>
+        </motion.div>
     )
 }
 
