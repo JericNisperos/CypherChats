@@ -18,7 +18,9 @@ function AuthenticateRegister() {
                 displayName: displayName,
                 email
             })
-            await setDoc(doc(db, "userChats", res.user.uid), {})
+            await setDoc(doc(db, "userChats", res.user.uid), {
+                uid: res.user.uid,
+            })
             await updateProfile(res.user, {
                 displayName,
             })

@@ -1,4 +1,10 @@
-import { faEllipsis, faVideo } from "@fortawesome/free-solid-svg-icons";
+import {
+  faClipboard,
+  faEllipsis,
+  faFile,
+  faPaperclip,
+  faVideo,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Messages from "./Messages";
@@ -21,21 +27,20 @@ function Chatbar() {
           <FontAwesomeIcon icon={faEllipsis} className="px-3" />
         </span>
       </div>
-      <div className="ChatbarContent">
+      <div className="ChatbarContent pt-3">
         <Messages />
-        <Messages />
-        <Messages />
-        <Messages />
-        <Messages />
-        
       </div>
-      <div className="ChatbarInput d-flex mt-auto">
-          <input
-            type="search"
-            placeholder="Your Message"
-            className="w-100 form-control"
-          />
+      <div className="ChatbarInput d-flex mt-auto justify-content-between">
+        <input
+          type="search"
+          placeholder="Type something..."
+          className="w-100 form-control"
+        />
+        <div className="d-flex align-items-center">
+          <FontAwesomeIcon icon={faPaperclip} style={{ cursor: "pointer" }} />
+          <button className="d-flex justify-content-end btn">Send</button>
         </div>
+      </div>
     </div>
   );
 }
