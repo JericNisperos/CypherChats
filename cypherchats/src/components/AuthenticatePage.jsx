@@ -30,8 +30,8 @@ function AuthenticatePage() {
                     <div className="col-md-10 justify-content-center">
                         <h1 className='display-1 title-heading text-center'>Cypher Chats</h1>
                         <h4 className='text-center'>Where is everyone hiding?</h4>
-                        {loginPage ? <><AuthenticateLogin /> <p className='text-center'>Don't have an account yet? <a href="#/" onClick={ChangePage} className="register-button">Register</a>.</p></>
-                            : <><AuthenticateRegister /><p className='text-center'>Already have an account? <a href="#/" onClick={ChangePage} className="register-button">Login Here</a>.</p></>}
+                        {loginPage ? <><AuthenticateLogin /> <p className='text-center pt-5'>Don't have an account yet? <a href="#/" onClick={ChangePage} className="register-button">Register</a>.</p></>
+                            : <><AuthenticateRegister /><p className='text-center pt-5'>Already have an account? <a href="#/" onClick={ChangePage} className="register-button">Login Here</a>.</p></>}
                     </div>
                 </div>
             </div>

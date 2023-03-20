@@ -17,7 +17,7 @@ function Home() {
       // }}
     >
       <div className="HomeWrapper container d-flex align-items-center justify-content-center rounded">
-        <div className="row">
+        <div className="row w-100 shadow rounded ">
           <div className="col-md-4 px-0">
             <Sidebar />
             

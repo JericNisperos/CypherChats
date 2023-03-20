@@ -64,9 +64,30 @@
   min-width: 800px;
 }
 
+.ProfileImg {
+  max-height: 48px;
+  min-width: 48px;
+  border-radius: 25px;
+  background-color: white;
+  // border: 1px solid white;
+}
+
+.ProfileImg-small {
+  max-height: 36px;
+  min-width: 36px;
+  border-radius: 25px;
+  background-color: white;
+  // border: 1px solid white;
+}
+
+.MessagesWrapper {
+  background-color: #f7c7c3;
+}
 .SidebarWrapper {
+  // min-width: 360px;
   .SidebarContent {
     background-color: #eba69e;
+    border-radius: 0 0 0 10px;
 
     .searchIcon:hover {
       background-color: #E98074;
@@ -104,22 +125,99 @@
     font-weight: bold;
   }
 }
-.ChatbarWrapper {
-  // min-width: 800px;
+
+@media screen and (max-width: 576px) {
+  .ChatlistWrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    // min-height: 60px;
+    // min-height: clamp(50%, 500px, 90%);
+  }
+
+  .Chatlist-items {
+    flex-direction: row !important;
+    width: 50%;
+    
+    
+  }
+
+}
+
+.ChatlistWrapper {
+  overflow: scroll;
+  min-height: clamp(10%, 600px, 100%);
+  max-height: 600px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  .Chatlist-items {
+    cursor: pointer;
+    
+    
+    &:hover {
+      background-color: #E98074;
+    }
+  }
+}
+
+.ChatbarInput {
+
+  .form-control {
+  border: 0 !important;
+  border-bottom: 1px solid E85A4F !important;
+  color: #E85A4F;
   border-radius: 0;
-  
+  max-width: 90%;
+  background-color: #EAE7DC;
+  &::placeholder {
+    color: #E98074;
+  }
+
+  &:focus {
+    border-color: #ced4da !important;
+    box-shadow: none !important;
+    outline: 0 !important;
+  }
+
+}
+}
+
+
+.ChatbarWrapper {
 
   .ChatbarNavbar {
     min-height: 48px;
     background-color: #E85A4F;
+    border-radius: 0 10px 0 0;
+
+    .ChatbarNavbar-icons {
+      color: #1F2833;
+      cursor: pointer;
+    }
+
+
+
+  }
+
+  .ChatbarContent {
+    background-color: #eba69e;
+    min-height: 600px;
+    max-height: 600px;
   }
 }
 .HomeWrapper {
     min-height: 100vh;
+    box-shadow: black;
     // min-width: 100%;
 }
 .LoginWrapper {
   // background-color: #8E8D8A;
+
+    .error {
+      color: red
+    }
 
   .form-control {
     border: 0 !important;

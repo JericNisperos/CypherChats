@@ -1,9 +1,12 @@
 import { signOut } from "firebase/auth";
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { auth, db } from "../config/Firebase";
 import { doc, getDoc } from "firebase/firestore";
+import { AuthContext } from "../contexts/AuthContext";
 
 export default function Navbar() {
+  const {currentUser} = useContext(AuthContext);
+
   return (
     <div className="NavbarWrapper d-flex align-items-center">
       <div className="col-md-9 d-flex justify-content-start align-items-center">
@@ -12,9 +15,9 @@ export default function Navbar() {
           width="64px"
           height="48px"
           alt="logo"
-          className="object-fit-none rounded mx-1"
+          className="rounded mx-1"
         ></img>
-        <p className="displayName text-center mt-0 mb-0 px-2">Amari</p>
+        <p className="displayName text-center mt-0 mb-0 px-2">{currentUser.displayName}</p>
       </div>
       <div className="col-md-3 d-flex justify-content-end align-right">
         <a
@@ -24,7 +27,7 @@ export default function Navbar() {
             signOut(auth);
           }}
         >
-          Log Out
+          Logout
         </a>
       </div>
     </div>

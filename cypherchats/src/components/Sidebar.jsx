@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "./Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import ListUsers from "./ListUsers";
 
 function Sidebar() {
   return (
@@ -19,11 +20,8 @@ function Sidebar() {
             {/* Search */}
           </button>
         </div>
-        <div className="p-2">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Id est modi
-          reprehenderit architecto fuga, nam nesciunt quisquam molestiae minima
-          officiis corporis magni molestias aliquid suscipit porro odio omnis,
-          dolorem voluptate!
+        <div className="">
+          <ListUsers />
         </div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from 'react'
 import { auth, db } from '../config/Firebase';
-import { createUserWithEmailAndPassword} from 'firebase/auth';
+import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from 'react-router-dom';
 
@@ -15,10 +15,13 @@ function AuthenticateRegister() {
              const res = await createUserWithEmailAndPassword(auth, email, password)
             await setDoc(doc(db, "users", res.user.uid), {
                 uid: res.user.uid,
-                displayName,
+                displayName: displayName,
                 email
             })
-            console.log(auth.currentUser.email)
+            await setDoc(doc(db, "userChats", res.user.uid), {})
+            await updateProfile(res.user, {
+                displayName,
+            })
             navigate("/");
         } catch (err) {
             if(err === "auth/email-already-in-use")
@@ -31,7 +34,7 @@ function AuthenticateRegister() {
     };
 
   return (
-    <form className='LoginWrapper p-4 rounded' onSubmit={SignUp}>
+    <form className='LoginWrapper p-4 rounded shadow' onSubmit={SignUp}>
                             <h2 className='text-center mt-5 mb-5'>Register an Account</h2>
                             <div className='form-group was-validated'>
                                 <input
