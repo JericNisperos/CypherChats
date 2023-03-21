@@ -27,7 +27,7 @@ function Messages({ message }) {
             src="https://t3.ftcdn.net/jpg/00/57/04/58/360_F_57045887_HHJml6DJVxNBMqMeDqVJ0ZQDnotp5rGD.jpg"
             alt="temp"
           />
-          <span>3m ago</span>
+          <span>Just now</span>
         </div>
 
         <div className="MessageContent align-items-center w-75 d-flex">

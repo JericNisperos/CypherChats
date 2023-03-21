@@ -30,31 +30,37 @@ function ListUsers() {
 
   return (
     <div className="ChatlistWrapper">
-      {listUsers && 
-        Object.entries(listUsers)?.map((listUser) =>
-          (
-          <div
-            key={listUser[0]}
-            onClick={() => handleSelect(listUser[1].userInfo)}
-            className="Chatlist-items d-flex align-items-center pt-2 pb-2 mr-0"
-          >
-            <img
-              className="ProfileImg mx-3"
-              src="https://t3.ftcdn.net/jpg/00/57/04/58/360_F_57045887_HHJml6DJVxNBMqMeDqVJ0ZQDnotp5rGD.jpg"
-              alt="temp"
-            />
-            <div className="d-flex ">
-              <span className="d-none d-sm-block px-3">
-                {listUser[1].userInfo?.displayName.split(" ")[0]}
-              </span>
-              <span className="d-none d-sm-block px-3">
-                {listUser[1].userInfo?.lastMessage?.text}
-              </span>
+      {listUsers &&
+        Object.entries(listUsers)
+          ?.sort((a, b) => b[1].date - a[1].date)
+          .map((listUser) => (
+            <div
+              key={listUser[0]}
+              onClick={() => handleSelect(listUser[1].userInfo)}
+              className="Chatlist-items d-flex align-items-center pt-2 pb-2 mr-0"
+            >
+              <img
+                className="ProfileImg mx-3"
+                src="https://t3.ftcdn.net/jpg/00/57/04/58/360_F_57045887_HHJml6DJVxNBMqMeDqVJ0ZQDnotp5rGD.jpg"
+                alt="temp"
+              />
+              <div className="d-flex align-items-center">
+                <span className="d-none d-sm-block px-3">
+                  {listUser[1].userInfo?.displayName}
+                  <p className="">
+                    <em>
+                      <small>{listUser[1].lastMessage?.text}</small>
+                    </em>
+                  </p>
+                </span>
+                {/* <span className="d-none d-sm-block px-3">
+              {listUser[1].lastMessage?.text}
+              </span> */}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
     </div>
-  )
+  );
 }
 
 export default ListUsers;
