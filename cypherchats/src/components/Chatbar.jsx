@@ -7,7 +7,7 @@ import {
   Timestamp,
   updateDoc,
 } from "firebase/firestore";
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect, useRef, useState } from "react";
 import { db } from "../config/Firebase";
 import { ChatContext } from "../contexts/ChatContext";
 import Messages from "./Messages";
@@ -26,14 +26,18 @@ function Chatbar() {
   const { data } = useContext(ChatContext);
   const [text, setText] = useState("");
 
+  const audioPlayer = useRef(null);
+
   useEffect(() => {
     const unsub = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
       doc.exists() && setMessages(doc.data().messages);
+      
     });
 
     return () => {
       unsub();
     };
+    
   }, [data.chatId]);
 
   async function handleSend() {
@@ -44,6 +48,7 @@ function Chatbar() {
           text,
           senderId: currentUser.uid,
           date: Timestamp.now(),
+          seen: false
         }),
       });
     } catch (err) {
@@ -63,6 +68,16 @@ function Chatbar() {
       },
       [data.chatId + ".date"]: serverTimestamp(),
     });
+    audioPlayer.current.play();
+    // if(!data.chatId.seen) {
+      
+    //   console.log("false to nung una")
+    //   await updateDoc(doc(db, "chats", data.chatId), {
+    //     messages: arrayUnion({
+    //       seen: true
+    //     }),
+    //   });
+    // }
 
     setText("");
   }
@@ -111,6 +126,7 @@ function Chatbar() {
           >
             Send
           </button>
+          <audio ref={audioPlayer} src="https://cdn.pixabay.com/download/audio/2021/08/09/audio_9f35254621.mp3?filename=notification-sound-7062.mp3" />
         </div>
       </div>
     </div>

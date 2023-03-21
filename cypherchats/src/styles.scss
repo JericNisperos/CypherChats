@@ -145,6 +145,10 @@
     justify-content: center;
   }
 
+  .Footer {
+    visible: hidden
+  }
+
   .Chatlist-items {
     flex-direction: row !important;
     width: 50%;
@@ -221,6 +225,7 @@
   box-shadow: black;
 }
 .LoginWrapper {
+  background-color: #d8c3a5;
   .error {
     color: red;
   }
