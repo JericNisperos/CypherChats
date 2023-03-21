@@ -12,6 +12,7 @@ function Sidebar() {
   const [user, setUser] = useState(null);
 
   const { currentUser } = useContext(AuthContext);
+  // const {dispatch } = useContext(ChatContext);
 
   async function handleSearch() {
     const q = query(
@@ -32,6 +33,7 @@ function Sidebar() {
   }
 
   async function handleSelect() {
+    
     const combinedId =
       currentUser.uid > user.uid
         ? currentUser.uid + user.uid
@@ -66,7 +68,8 @@ function Sidebar() {
     }
 
     setUser(null);
-    setUsername("")
+    setUsername("");
+    console.log(combinedId);
   }
   return (
     <div className="SidebarWrapper">
@@ -83,7 +86,7 @@ function Sidebar() {
             }}
             value={username}
           />
-          <button type="button" className="btn searchIcon">
+          <button type="button" onClick={handleSearch} className="btn searchIcon">
             <FontAwesomeIcon icon={faSearch} />
             {/* Search */}
           </button>

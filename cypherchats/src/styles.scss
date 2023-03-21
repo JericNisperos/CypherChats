@@ -16,17 +16,21 @@
 /* 
 #EAE7DC
 #D8C3A5
-#8E8D8A
-#E98074
-#E85A4F
+#cea282
+#ac866b
+#9a7962
  */
+
+
 
 .colors {
   color: #eae7dc;
   color: #d8c3a5;
-  color: #8e8d8a;
-  color: #e98074;
-  color: #e85a4f;
+  color: #cea282;
+  color: #ac866b;
+  color: #9a7962;
+
+  color: #cea282
 }
 
 .App {
@@ -55,6 +59,11 @@
 
 .chatbar {
   width: 100%;
+}
+
+.btn-info {
+  background-color: #e7b48f !important;
+  border: none !important;
 }
 
 .parent {
@@ -87,6 +96,9 @@
 }
 
 .MessagesWrapper {
+  .TimeStamp-text {
+    color: gray;
+  }
   &.Owner {
     flex-direction: row-reverse !important;
     .MessageContent {
@@ -105,7 +117,7 @@
     .MessageSender {
       // border: 1px solid black;
       border-radius: 0px 10px 10px 10px;
-      background-color: #f38982;
+      background-color: #dfb191;
       font-size: 18px;
 
 
@@ -113,19 +125,19 @@
   }
 }
 .ChatListUsersWrapper {
-  background-color: #eba69e;
+  background-color: #dfb191;
 }
 .SidebarWrapper {
   // min-width: 360px;
   .Searchlist {
-    border-bottom: 2px solid #e85a4f;
+    border-bottom: 2px solid #9a7962;
   }
   .SidebarContent {
-    background-color: #eba69e;
+    background-color: #dfb191;
     border-radius: 0 0 0 10px;
 
     .searchIcon:hover {
-      background-color: #e98074;
+      background-color: #ac866b;
       border-radius: 0 !important;
     }
   }
@@ -135,7 +147,7 @@
     border-radius: 0;
     background-color: #eae7dc;
     &::placeholder {
-      color: #e98074;
+      color: #ac866b;
     }
 
     &:focus {
@@ -146,10 +158,10 @@
   }
 }
 .NavbarWrapper {
-  background-color: #e98074;
+  background-color: #ac866b;
   border-top-left-radius: 10px;
   .LogoutButton {
-    background-color: #e98074;
+    background-color: #ac866b;
     border: 0;
   }
 
@@ -191,7 +203,7 @@
     cursor: pointer;
 
     &:hover {
-      background-color: #e98074;
+      background-color: #ac866b;
     }
   }
 }
@@ -200,12 +212,12 @@
   .form-control {
     border: 0 !important;
     border-bottom: 1px solid E85A4F !important;
-    color: #e85a4f;
+    color: #9a7962;
     border-radius: 0;
     max-width: 90%;
     background-color: #eae7dc;
     &::placeholder {
-      color: #e98074;
+      color: #ac866b;
     }
 
     &:focus {
@@ -217,10 +229,10 @@
 }
 
 .ChatbarWrapper {
-  background-color: #f7c7c3;
+  background-color: #e6bb9d;
   .ChatbarNavbar {
     min-height: 48px;
-    background-color: #e85a4f;
+    background-color: #9a7962;
     border-radius: 0 10px 0 0;
 
     .ChatbarNavbar-icons {
@@ -245,7 +257,7 @@
   // min-width: 100%;
 }
 .LoginWrapper {
-  // background-color: #8E8D8A;
+  // background-color: #cea282;
 
   .error {
     color: red;
@@ -257,7 +269,7 @@
     color: black;
     background-color: #eae7dc;
     &::placeholder {
-      color: #e98074;
+      color: #ac866b;
     }
   }
 
