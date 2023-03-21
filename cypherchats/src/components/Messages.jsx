@@ -1,16 +1,20 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useRef } from "react";
 import { AuthContext } from "../contexts/AuthContext";
 import { ChatContext } from "../contexts/ChatContext";
 
 function Messages({ message }) {
-  console.log(message + "hehhe");
-
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
 
+  const ref = useRef();
+
+  useEffect(()=> {
+    ref.current?.scrollIntoView({ behavior: "smooth"});
+  }, [message]);
+
   return (
     <div>
-      <div className="MessagesWrapper d-flex">
+      <div ref={ref} className={`MessagesWrapper d-flex ${message.senderId === currentUser.uid && "Owner"}`}>
         <div className="MessageImg d-flex p-3 flex-column">
           <img
             className="ProfileImg-msg"
@@ -20,12 +24,15 @@ function Messages({ message }) {
           <span>3m ago</span>
         </div>
 
-        <div className="MessageContent align-items-center w-75 d-flex ">
-          <p className="MessageSender p-2">Hello!</p>
+        <div className="MessageContent align-items-center w-75 d-flex">
+          <p className="MessageSender p-2 d-flex ">{message.text}</p>
         </div>
       </div>
 
-      <div className="MessagesWrapper Owner d-flex">
+
+
+
+      {/* <div className="MessagesWrapper Owner d-flex">
         <div className="MessageImg d-flex p-3 flex-column">
           <img
             className="ProfileImg-msg"
@@ -38,7 +45,7 @@ function Messages({ message }) {
         <div className="MessageContent align-items-center justify-content-end w-75 d-flex ">
           <p className="MessageSender p-2 ">Hello there!</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

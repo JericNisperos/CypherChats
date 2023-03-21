@@ -6,13 +6,14 @@ import ListUsers from "./ListUsers";
 import { collection, getDoc, getDocs, query, serverTimestamp, updateDoc, where, doc, setDoc } from "firebase/firestore";
 import { db } from "../config/Firebase";
 import { AuthContext } from "../contexts/AuthContext";
+import { ChatContext } from "../contexts/ChatContext";
 
 function Sidebar() {
   const [username, setUsername] = useState("");
   const [user, setUser] = useState(null);
 
   const { currentUser } = useContext(AuthContext);
-  // const {dispatch } = useContext(ChatContext);
+  const {dispatch } = useContext(ChatContext);
 
   async function handleSearch() {
     const q = query(
@@ -32,44 +33,43 @@ function Sidebar() {
     e.code === "Enter" && handleSearch();
   }
 
-  async function handleSelect() {
-    
+  const handleSelect = async () => {
     const combinedId =
       currentUser.uid > user.uid
         ? currentUser.uid + user.uid
         : user.uid + currentUser.uid;
-
     try {
       const res = await getDoc(doc(db, "chats", combinedId));
-
+      console.log(res + " is here");
       if (!res.exists()) {
+        console.log("Res doesn't exist");
         await setDoc(doc(db, "chats", combinedId), { messages: [] });
 
-        await updateDoc(doc(db, "userChats", currentUser.uid),{
-          [combinedId+".userInfo"]: {
+        await updateDoc(doc(db, "userChats", currentUser.uid), {
+          [combinedId + ".userInfo"]: {
             uid: user.uid,
             displayName: user.displayName,
-
           },
-          [combinedId+".date"]: serverTimestamp()
+          [combinedId + ".date"]: serverTimestamp(),
         });
 
-        await updateDoc(doc(db, "userChats", currentUser.uid),{
-          [combinedId+".userInfo"]: {
+        await updateDoc(doc(db, "userChats", user.uid), {
+          [combinedId + ".userInfo"]: {
             uid: currentUser.uid,
             displayName: currentUser.displayName,
-
           },
-          [combinedId+".date"]: serverTimestamp()
+          [combinedId + ".date"]: serverTimestamp(),
         });
+
+        
       }
-    } catch (err) {
-      console.log(err);
-    }
+      
+    } catch (err) {}
 
     setUser(null);
-    setUsername("");
-    console.log(combinedId);
+    setUsername("")
+    console.log("From Sidebar: CombinedId = " + combinedId);
+    
   }
   return (
     <div className="SidebarWrapper">

@@ -102,8 +102,10 @@
   &.Owner {
     flex-direction: row-reverse !important;
     .MessageContent {
+      justify-content: end;
       .MessageSender {
         // border: 1px solid black;
+
         border-radius: 10px 0px 10px 10px;
         background-color: #eef4fa;
         font-size: 18px;
@@ -117,7 +119,7 @@
     .MessageSender {
       // border: 1px solid black;
       border-radius: 0px 10px 10px 10px;
-      background-color: #dfb191;
+      background-color: #bd9376;
       font-size: 18px;
 
 
