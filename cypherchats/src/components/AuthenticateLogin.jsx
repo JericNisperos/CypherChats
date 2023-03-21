@@ -3,8 +3,6 @@ import { auth, googleProvider, db } from "../config/Firebase";
 import { signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
 import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faGoogle } from "@fortawesome/free-solid-svg-icons";
 
 function AuthenticateLogin() {
   const navigate = useNavigate();

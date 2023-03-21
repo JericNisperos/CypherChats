@@ -8,13 +8,18 @@ function Messages({ message }) {
 
   const ref = useRef();
 
-  useEffect(()=> {
-    ref.current?.scrollIntoView({ behavior: "smooth"});
+  useEffect(() => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
   }, [message]);
 
   return (
     <div>
-      <div ref={ref} className={`MessagesWrapper d-flex ${message.senderId === currentUser.uid && "Owner"}`}>
+      <div
+        ref={ref}
+        className={`MessagesWrapper d-flex ${
+          message.senderId === currentUser.uid && "Owner"
+        }`}
+      >
         <div className="MessageImg d-flex p-3 flex-column">
           <img
             className="ProfileImg-msg"
@@ -28,9 +33,6 @@ function Messages({ message }) {
           <p className="MessageSender p-2 d-flex ">{message.text}</p>
         </div>
       </div>
-
-
-
 
       {/* <div className="MessagesWrapper Owner d-flex">
         <div className="MessageImg d-flex p-3 flex-column">

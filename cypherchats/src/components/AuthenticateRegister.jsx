@@ -23,7 +23,7 @@ function AuthenticateRegister() {
         displayName,
       });
       await setDoc(doc(db, "userChats", res.user.uid), {});
-      
+
       navigate("/");
     } catch (err) {
       if (err === "auth/email-already-in-use")

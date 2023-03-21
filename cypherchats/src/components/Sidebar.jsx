@@ -3,7 +3,17 @@ import Navbar from "./Navbar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import ListUsers from "./ListUsers";
-import { collection, getDoc, getDocs, query, serverTimestamp, updateDoc, where, doc, setDoc } from "firebase/firestore";
+import {
+  collection,
+  getDoc,
+  getDocs,
+  query,
+  serverTimestamp,
+  updateDoc,
+  where,
+  doc,
+  setDoc,
+} from "firebase/firestore";
 import { db } from "../config/Firebase";
 import { AuthContext } from "../contexts/AuthContext";
 import { ChatContext } from "../contexts/ChatContext";
@@ -13,7 +23,7 @@ function Sidebar() {
   const [user, setUser] = useState(null);
 
   const { currentUser } = useContext(AuthContext);
-  const {dispatch } = useContext(ChatContext);
+  const { dispatch } = useContext(ChatContext);
 
   async function handleSearch() {
     const q = query(
@@ -60,17 +70,13 @@ function Sidebar() {
           },
           [combinedId + ".date"]: serverTimestamp(),
         });
-
-        
       }
-      
     } catch (err) {}
 
     setUser(null);
-    setUsername("")
+    setUsername("");
     console.log("From Sidebar: CombinedId = " + combinedId);
-    
-  }
+  };
   return (
     <div className="SidebarWrapper">
       <Navbar />
@@ -86,7 +92,11 @@ function Sidebar() {
             }}
             value={username}
           />
-          <button type="button" onClick={handleSearch} className="btn searchIcon">
+          <button
+            type="button"
+            onClick={handleSearch}
+            className="btn searchIcon"
+          >
             <FontAwesomeIcon icon={faSearch} />
             {/* Search */}
           </button>

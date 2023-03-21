@@ -1,11 +1,10 @@
 import { signOut } from "firebase/auth";
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import { auth, db } from "../config/Firebase";
-import { doc, getDoc } from "firebase/firestore";
 import { AuthContext } from "../contexts/AuthContext";
 
 export default function Navbar() {
-  const {currentUser} = useContext(AuthContext);
+  const { currentUser } = useContext(AuthContext);
 
   return (
     <div className="NavbarWrapper d-flex align-items-center">
@@ -17,7 +16,9 @@ export default function Navbar() {
           alt="logo"
           className="rounded mx-1"
         ></img>
-        <p className="displayName text-center mt-0 mb-0 px-2">{currentUser.displayName}</p>
+        <p className="displayName text-center mt-0 mb-0 px-2">
+          {currentUser.displayName}
+        </p>
       </div>
       <div className="col-md-3 d-flex justify-content-end align-right">
         <a

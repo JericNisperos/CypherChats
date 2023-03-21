@@ -25,7 +25,6 @@ function Chatbar() {
   const { currentUser } = useContext(AuthContext);
   const { data } = useContext(ChatContext);
   const [text, setText] = useState("");
-  
 
   useEffect(() => {
     const unsub = onSnapshot(doc(db, "chats", data.chatId), (doc) => {
@@ -36,7 +35,7 @@ function Chatbar() {
       unsub();
     };
   }, [data.chatId]);
-  
+
   async function handleSend() {
     try {
       await updateDoc(doc(db, "chats", data.chatId), {
@@ -66,8 +65,6 @@ function Chatbar() {
     });
 
     setText("");
-
-    
   }
 
   function handleEnter(e) {

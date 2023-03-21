@@ -1,8 +1,6 @@
 import React from "react";
 import Chatbar from "./Chatbar";
 import Sidebar from "./Sidebar";
-import { auth, db } from "../config/Firebase";
-import { doc, getDoc } from "firebase/firestore";
 import { motion } from "framer-motion";
 
 function Home() {
