@@ -28,6 +28,7 @@ function Home() {
           </div>
         </div>
       </div>
+      <div className="fixed-bottom d-flex justify-content-end px-4">I don't own any images or names in this Web App. All rights reserved ℗</div>
     </motion.div>
   );
 }

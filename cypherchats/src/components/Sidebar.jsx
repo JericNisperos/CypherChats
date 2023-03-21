@@ -99,7 +99,7 @@ function Sidebar() {
             >
               <img
                 className="ProfileImg mx-3"
-                src="https://valorantinfo.com/images/us/reyna_valorant_icon_3223.webp"
+                src="https://t3.ftcdn.net/jpg/00/57/04/58/360_F_57045887_HHJml6DJVxNBMqMeDqVJ0ZQDnotp5rGD.jpg"
                 alt="temp"
               />
               <span className="d-none d-sm-block px-3 ">

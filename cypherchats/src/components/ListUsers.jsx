@@ -39,7 +39,7 @@ function ListUsers() {
           >
             <img
               className="ProfileImg mx-3"
-              src="https://www.esports.net/wp-content/uploads/2022/08/Valorant-Brimstone-Guide.png"
+              src="https://t3.ftcdn.net/jpg/00/57/04/58/360_F_57045887_HHJml6DJVxNBMqMeDqVJ0ZQDnotp5rGD.jpg"
               alt="temp"
             />
             <div className="d-flex ">

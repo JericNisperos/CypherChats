@@ -18,7 +18,7 @@ function Messages({ message }) {
         <div className="MessageImg d-flex p-3 flex-column">
           <img
             className="ProfileImg-msg"
-            src="https://valorantinfo.com/images/us/yoru_valorant_icon_2860.webp"
+            src="https://t3.ftcdn.net/jpg/00/57/04/58/360_F_57045887_HHJml6DJVxNBMqMeDqVJ0ZQDnotp5rGD.jpg"
             alt="temp"
           />
           <span>3m ago</span>

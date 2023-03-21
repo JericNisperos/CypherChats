@@ -79,7 +79,7 @@ function Chatbar() {
         <span className="d-flex px-2 align-items-center">
           <img
             className="ProfileImg-small "
-            src="https://valorantinfo.com/images/us/yoru_valorant_icon_2860.webp"
+            src="https://t3.ftcdn.net/jpg/00/57/04/58/360_F_57045887_HHJml6DJVxNBMqMeDqVJ0ZQDnotp5rGD.jpg"
             alt="temp"
           />
           <span className="d-none d-sm-block px-3">
