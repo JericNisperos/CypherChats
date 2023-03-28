@@ -4,7 +4,6 @@ import { ChatContext } from "../contexts/ChatContext";
 
 function Messages({ message }) {
   const { currentUser } = useContext(AuthContext);
-  const { data } = useContext(ChatContext);
 
   const ref = useRef();
 
