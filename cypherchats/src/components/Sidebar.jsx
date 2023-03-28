@@ -23,7 +23,6 @@ function Sidebar() {
   const [user, setUser] = useState(null);
 
   const { currentUser } = useContext(AuthContext);
-  const { dispatch } = useContext(ChatContext);
 
   async function handleSearch() {
     const q = query(
