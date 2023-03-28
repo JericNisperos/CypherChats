@@ -1,6 +1,6 @@
 import { signOut } from "firebase/auth";
 import React, { useContext } from "react";
-import { auth, db } from "../config/Firebase";
+import { auth } from "../config/Firebase";
 import { AuthContext } from "../contexts/AuthContext";
 
 export default function Navbar() {
