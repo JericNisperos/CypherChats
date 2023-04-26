@@ -2,7 +2,7 @@
 
 The Aim for this app is to facilitate seamless communication between users in a secure and user-friendly manner. 
 
-Link: https://cypherchats.web.app
+Link: https://cypherchats.jnisperos.space
 
 ## Tools and Programming Languages Used
 
